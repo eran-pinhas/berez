@@ -73,7 +73,7 @@ $angle: 5deg;
 @keyframes shake {
   10%,
   90% {
-    transform: rotate($angle/4);
+    transform: rotate($angle/4) translateY(4px);
   }
 
   20%,

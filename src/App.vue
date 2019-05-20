@@ -1,5 +1,5 @@
 <template>
-  <div id="app-wrapper" :style="{ fontSize: fontSize + 'px' }">
+  <div id="app-wrapper" :style="{ fontSize: fontSize + 'px', visibily:visibily }">
     <div id="app">
       <div class="sky">
         <div class="title-box">
@@ -87,13 +87,13 @@
         <img class="drops-9-1" src="@/assets/images/drop5.png">
         <img class="drops-9-2" src="@/assets/images/drop6.png">
       </div>
-      <Bug type="Bug1" :width="50" :x="50" :y="50" :rotate="10"/>
-      <Bug type="Bug1" :width="50" :x="50" :y="50" :rotate="20"/>
-      <Bug type="Bug1" :width="50" :x="50" :y="50" :rotate="30"/>
-      <Bug type="Bug1" :width="50" :x="50" :y="50" :rotate="40"/>
-      <Bug type="Bug1" :width="50" :x="50" :y="50" :rotate="50"/>
-      <Bug type="Bug2" :width="50" :x="50" :y="60" :rotate="10"/>
-      <Bug type="Bug2" :width="50" :x="50" :y="60" :rotate="30"/>
+      <Bug type="Bug1" :width="12" :x="14" :y="43" :rotate="-13"/>
+      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="20"/>
+      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="30"/>
+      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="40"/>
+      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="50"/>
+      <Bug type="Bug2" :width="20" :x="50" :y="60" :rotate="10"/>
+      <Bug type="Bug2" :width="20" :x="50" :y="60" :rotate="30"/>
       <Bug type="Larvae2" :width="10" :x="50" :y="60" :rotate="0"/>
 
       <VueAudio :file="song" :autoPlay="true"/>
@@ -111,16 +111,22 @@ export default {
     Bug,
     VueAudio
   },
+
   data() {
     return {
       dropsTop: 0,
       fontSize: 16,
-      song: Song
+      song: Song,
+      visibily: "hidden"
     };
   },
+
   mounted() {
     addEventListener("scroll", this.handleScroll);
     addEventListener("resize", this.resize);
+    addEventListener("load", () => {
+      this.visibily = "visible";
+    });
     console.log("scrolling Injected");
     this.resize();
   },
@@ -193,12 +199,26 @@ $leaf-animation2-offset: -30deg;
   }
 }
 
+$b-x-offset: -30%;
+$b-y-offset: 15%;
+@keyframes bird-1-animation {
+  0% {
+    transform: translate($b-x-offset, $b-y-offset) rotate(0deg)
+      translate(-$b-x-offset, -$b-y-offset);
+  }
+  100% {
+    transform: translate($b-x-offset, $b-y-offset) rotate(10deg)
+      translate(-$b-x-offset, -$b-y-offset);
+  }
+}
+
 #app-wrapper {
   max-width: $app-width;
   margin: 0 auto;
   overflow: hidden;
 }
 #app {
+  display: hidden;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -247,8 +267,12 @@ $leaf-animation2-offset: -30deg;
       z-index: 100;
       direction: rtl;
       text-align: right;
-      font-size: 1.6em;
+      font-size: 2em;
       top: 5% + $i * 10%;
+
+      @media only screen and (max-width: 600px) {
+        font-size: 3em;
+      }
     }
   }
 
@@ -334,6 +358,9 @@ $leaf-animation2-offset: -30deg;
     top: 23%;
     width: 52%;
     z-index: 10;
+    &:hover {
+      animation: bird-1-animation 1s ease-in-out alternate;
+    }
   }
 
   .ground-mountains {
