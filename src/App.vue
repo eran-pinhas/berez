@@ -3,7 +3,7 @@
     <div id="app">
       <div class="sky">
         <div class="title-box">
-          <span class="title">ּבֶרֶז</span>
+          <span class="title">בֶּרֶז</span>
           <span class="author">
             מילים: אלון אוריון
             <br>לחן: יריב לבלנג
@@ -150,16 +150,18 @@ export default {
 </script>
 
 <style lang="scss">
-$drops-1-offset: 22%;
-$drops-2-offset: 30%;
-$drops-3-offset: 37%;
-$drops-4-offset: 43%;
-$drops-5-offset: 53%;
-$drops-6-offset: 62%;
-$drops-7-offset: 72%;
-$drops-8-offset: 82%;
-$drops-9-offset: 92%;
-$drops-left-offset: 33.4%;
+$drops-mult: 0.7;
+$drops-offset: 3%;
+$drops-1-offset: $drops-offset + $drops-mult * 22%;
+$drops-2-offset: $drops-offset + $drops-mult * 30%;
+$drops-3-offset: $drops-offset + $drops-mult * 37%;
+$drops-4-offset: $drops-offset + $drops-mult * 43%;
+$drops-5-offset: $drops-offset + $drops-mult * 53%;
+$drops-6-offset: $drops-offset + $drops-mult * 62%;
+$drops-7-offset: $drops-offset + $drops-mult * 72%;
+$drops-8-offset: $drops-offset + $drops-mult * 82%;
+$drops-9-offset: $drops-offset + $drops-mult * 92%;
+$drops-left-offset: 31.4%;
 
 $app-width: 1200px;
 
@@ -317,7 +319,7 @@ $leaf-animation2-offset: -30deg;
     transform: translateX(-50%);
     position: absolute;
     left: $drops-left-offset;
-    top: 16.7%;
+    top: 14.55%;
     width: 2%;
     z-index: 9;
   }
@@ -361,7 +363,7 @@ $leaf-animation2-offset: -30deg;
     height: 100%;
     z-index: 3;
     img {
-      transform: translateX(-50%);
+      transform: translate(-50%, -50%);
       position: absolute;
       left: 0;
     }
@@ -370,11 +372,11 @@ $leaf-animation2-offset: -30deg;
       width: 16.3%;
     }
     .drops-1-2 {
-      top: $drops-1-offset + 2%;
+      top: $drops-1-offset + 0.8%;
       width: 36.8%;
     }
     .drops-1-3 {
-      top: $drops-1-offset + 4%;
+      top: $drops-1-offset + 1.6%;
       width: 9.4%;
     }
 
@@ -388,11 +390,11 @@ $leaf-animation2-offset: -30deg;
       width: 16.3%;
     }
     .drops-3-2 {
-      top: $drops-3-offset + 2%;
+      top: $drops-3-offset + 0.9%;
       width: 36.8%;
     }
     .drops-3-3 {
-      top: $drops-3-offset + 4%;
+      top: $drops-3-offset + 1.8%;
       width: 9.4%;
     }
     .drops-4-1 {
