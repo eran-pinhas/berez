@@ -96,7 +96,7 @@
       <Bug type="Bug2" :width="50" :x="50" :y="60" :rotate="30"/>
       <Bug type="Larvae2" :width="10" :x="50" :y="60" :rotate="0"/>
 
-      <VueAudio :file="song"/>
+      <VueAudio :file="song" :autoPlay="true"/>
     </div>
   </div>
 </template>
