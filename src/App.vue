@@ -95,22 +95,27 @@
       <Bug type="Bug2" :width="50" :x="50" :y="60" :rotate="10"/>
       <Bug type="Bug2" :width="50" :x="50" :y="60" :rotate="30"/>
       <Bug type="Larvae2" :width="10" :x="50" :y="60" :rotate="0"/>
+
+      <VueAudio :file="song"/>
     </div>
   </div>
 </template>
 
 <script>
 import Bug from "./components/Bug.vue";
-
+import VueAudio from "vue-audio";
+import Song from "./assets/berez_song.mp3";
 export default {
   name: "app",
   components: {
-    Bug
+    Bug,
+    VueAudio
   },
   data() {
     return {
       dropsTop: 0,
-      fontSize: 16
+      fontSize: 16,
+      song: Song
     };
   },
   mounted() {
@@ -453,6 +458,30 @@ $leaf-animation2-offset: -30deg;
     .drops-9-2 {
       top: $drops-9-offset + 1.2%;
       width: 29.4%;
+    }
+  }
+  .vue-sound-wrapper {
+    // position: absolute;
+    // top: 1%;
+    // left: 1%;
+    // z-index: 10000;
+
+    .vue-sound__player {
+      & > * {
+        display: none;
+      }
+      & > [Title="Play"] {
+        display: block;
+        padding: 0.45em;
+        border: 0.2em solid #82c15b;
+        font-size: 1.4em;
+        color: #82c15b;
+        border-radius: 50%;
+        position: fixed;
+        top: 1em;
+        left: 1em;
+        z-index: 10000;
+      }
     }
   }
 }
