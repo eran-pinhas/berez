@@ -15,7 +15,7 @@
       <div class="ground-sand"></div>
       <img class="faucet" src="@/assets/images/faucet.png">
       <img class="faucet-drop" src="@/assets/images/drop1.png">
-      <img class="bird-1" src="@/assets/images/swallow1.png">
+      <img class="bird-1" src="@/assets/images/swallow1.png"  @mouseover="birdMoving = true" :class="{ moving: birdMoving}">
       <img class="bottom" src="@/assets/images/bottom.png">
 
       <p class="text-box-1">
@@ -88,14 +88,39 @@
         <img class="drops-9-2" src="@/assets/images/drop6.png">
       </div>
       <Bug type="Bug1" :width="12" :x="14" :y="43" :rotate="-13"/>
-      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="20"/>
-      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="30"/>
-      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="40"/>
-      <Bug type="Bug1" :width="20" :x="50" :y="50" :rotate="50"/>
-      <Bug type="Bug2" :width="20" :x="50" :y="60" :rotate="10"/>
-      <Bug type="Bug2" :width="20" :x="50" :y="60" :rotate="30"/>
+      <Bug type="Bug1" :width="13" :x="50" :y="40" :rotate="20"/>
+      <Bug type="Bug1" :width="17" :x="75" :y="42" :rotate="30"/>
+      <Bug type="Bug1" :width="17" :x="40" :y="50" :rotate="181"/>
+      <Bug type="Bug1" :width="14" :x="30" :y="78" :rotate="90"/>
+      <Bug type="Bug1" :width="14" :x="11" :y="66" :rotate="0"/>
+      <Bug type="Bug2" :width="16" :x="74" :y="62" :rotate="0"/>
+      <Bug type="Bug2" :width="16" :x="12" :y="49" :rotate="30"/>
+      <Bug type="Larvae5" :width="12" :x="37" :y="43.8" :rotate="300"/>
+      <Bug type="Larvae5" :width="14" :x="37" :y="41" :rotate="0"/>
+      <Bug type="Larvae3" :width="7" :x="41" :y="40" :rotate="0"/>
+      <Bug type="Larvae4" :width="6" :x="29" :y="42" :rotate="0"/>
+      <Bug type="Larvae6" :width="2" :x="35" :y="46" :rotate="140"/>
+      <Bug type="Larvae8" :width="7" :x="24" :y="46" :rotate="0"/>
+      <Bug type="Larvae7" :width="6" :x="15" :y="49" :rotate="0"/>
+      <Bug type="Larvae9" :width="6" :x="0" :y="51" :rotate="0"/>
+      <Bug type="Larvae3" :width="5" :x="41" :y="56" :rotate="0"/>
+      <Bug type="Larvae4" :width="4" :x="25" :y="52" :rotate="0"/>
+      <Bug type="Larvae4" :width="4" :x="2" :y="57" :rotate="100"/>
+      <Bug type="Larvae4" :width="3" :x="32" :y="44" :rotate="46"/>
+      <Bug type="Larvae6" :width="1.5" :x="41" :y="52" :rotate="140"/>
+      <Bug type="Larvae2" :width="5" :x="82" :y="49" :rotate="0"/>
       <Bug type="Larvae2" :width="10" :x="50" :y="60" :rotate="0"/>
 
+      <Tadpole type="tadpole1" :width="14" :x="45" :y="47.5" :rotate="-30"/>
+      <Tadpole type="tadpole1" :width="10" :x="36" :y="61" :rotate="-88"/>
+      <Tadpole type="tadpole1" :width="10" :x="21" :y="63" :rotate="-50"/>
+      <Tadpole type="tadpole1" :width="10" :x="55" :y="58" :rotate="-121"/>
+      <Tadpole type="tadpole1" :width="10" :x="70" :y="87" :rotate="-83"/>
+
+      <Tadpole type="tadpole3" :width="18" :x="12" :y="71" :rotate="100"/>
+      <Tadpole type="tadpole3" :width="14" :x="30" :y="65" :rotate="57"/>
+      <Tadpole type="tadpole3" :width="15" :x="42" :y="61" :rotate="100"/>
+      
       <VueAudio :file="song" :autoPlay="true"/>
     </div>
   </div>
@@ -103,13 +128,15 @@
 
 <script>
 import Bug from "./components/Bug.vue";
+import Tadpole from "./components/Tadpole.vue";
 import VueAudio from "vue-audio";
 import Song from "./assets/berez_song.mp3";
 export default {
   name: "app",
   components: {
     Bug,
-    VueAudio
+    VueAudio,
+    Tadpole
   },
 
   data() {
@@ -117,11 +144,17 @@ export default {
       dropsTop: 0,
       fontSize: 16,
       song: Song,
-      visibily: "hidden"
+      visibily: "hidden",
+      birdMoving: false
     };
   },
 
   mounted() {
+    // bird amination
+    let animationElem = this.$el.getElementsByClassName("bird-1")[0];
+    animationElem.addEventListener("webkitAnimationEnd", this.endMotion);
+    animationElem.addEventListener("animationend", this.endMotion);
+
     addEventListener("scroll", this.handleScroll);
     addEventListener("resize", this.resize);
     addEventListener("load", () => {
@@ -136,6 +169,9 @@ export default {
     console.log("scrolling Destroyed");
   },
   methods: {
+    endMotion() {
+      this.birdMoving = false;
+    },
     getHead() {
       return document.getElementsByTagName("html")[0];
     },
@@ -206,8 +242,12 @@ $b-y-offset: 15%;
     transform: translate($b-x-offset, $b-y-offset) rotate(0deg)
       translate(-$b-x-offset, -$b-y-offset);
   }
-  100% {
+  50% {
     transform: translate($b-x-offset, $b-y-offset) rotate(10deg)
+      translate(-$b-x-offset, -$b-y-offset);
+  }
+  100% {
+    transform: translate($b-x-offset, $b-y-offset) rotate(0deg)
       translate(-$b-x-offset, -$b-y-offset);
   }
 }
@@ -263,7 +303,7 @@ $b-y-offset: 15%;
     .text-box-#{$i} {
       position: absolute;
       right: 15%;
-      width: 70%;
+      width: 50%;
       z-index: 100;
       direction: rtl;
       text-align: right;
@@ -358,8 +398,8 @@ $b-y-offset: 15%;
     top: 23%;
     width: 52%;
     z-index: 10;
-    &:hover {
-      animation: bird-1-animation 1s ease-in-out alternate;
+    &.moving {
+      animation: bird-1-animation 2s ease-in-out;
     }
   }
 
