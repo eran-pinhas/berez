@@ -15,15 +15,20 @@
       <div class="ground-sand"></div>
       <img class="faucet" src="@/assets/images/faucet.png">
       <img class="faucet-drop" src="@/assets/images/drop1.png">
-      <img class="bird-1" src="@/assets/images/swallow1.png"  @mouseover="birdMoving = true" :class="{ moving: birdMoving}">
+      <img
+        class="bird-1"
+        src="@/assets/images/swallow1.png"
+        @mouseover="birdMoving = true"
+        :class="{ moving: birdMoving}"
+      >
       <img class="bottom" src="@/assets/images/bottom.png">
 
-      <Verse1 class="svg-text-box-1" />
-      <Verse2 class="svg-text-box-2" />
-      <Verse3 class="svg-text-box-3" />
-      <Verse4 class="svg-text-box-4" />
-      <Verse5 class="svg-text-box-5" />
-      <Verse6 class="svg-text-box-6" />
+      <Verse1 class="svg-text-box-1"/>
+      <Verse2 class="svg-text-box-2"/>
+      <Verse3 class="svg-text-box-3"/>
+      <Verse4 class="svg-text-box-4"/>
+      <Verse5 class="svg-text-box-5"/>
+      <Verse6 class="svg-text-box-6"/>
 
       <div class="canes">
         <img class="leaf-1" src="@/assets/images/leaf3.png">
@@ -90,7 +95,7 @@
       <Tadpole type="tadpole3" :width="18" :x="12" :y="71" :rotate="100"/>
       <Tadpole type="tadpole3" :width="14" :x="30" :y="65" :rotate="57"/>
       <Tadpole type="tadpole3" :width="15" :x="42" :y="61" :rotate="100"/>
-      
+
       <VueAudio :file="song" :autoPlay="true"/>
     </div>
   </div>
@@ -102,14 +107,13 @@ import Tadpole from "./components/Tadpole.vue";
 import VueAudio from "vue-audio";
 import Song from "./assets/berez_song.mp3";
 
-
-import Title from './assets/svg/title.svg';
-import Verse1 from './assets/svg/verse1.svg';
-import Verse2 from './assets/svg/verse2.svg';
-import Verse3 from './assets/svg/verse3.svg';
-import Verse4 from './assets/svg/verse4.svg';
-import Verse5 from './assets/svg/verse5.svg';
-import Verse6 from './assets/svg/verse6.svg';
+import Title from "./components/svg/title.vue";
+import Verse1 from "./components/svg/verse1.vue";
+import Verse2 from "./components/svg/verse2.vue";
+import Verse3 from "./components/svg/verse3.vue";
+import Verse4 from "./components/svg/verse4.vue";
+import Verse5 from "./components/svg/verse5.vue";
+import Verse6 from "./components/svg/verse6.vue";
 
 export default {
   name: "app",
@@ -147,13 +151,15 @@ export default {
     addEventListener("load", () => {
       this.visibily = "visible";
     });
-    console.log("scrolling Injected");
     this.resize();
+
+    // setTimeout(() => {
+    //   document.querySelectorAll('[title="Play"]')[0].click();
+    // }, 100);
   },
   beforeDestroy() {
     removeEventListener("scroll", this.handleScroll);
     removeEventListener("resize", this.resize);
-    console.log("scrolling Destroyed");
   },
   methods: {
     endMotion() {

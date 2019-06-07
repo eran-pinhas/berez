@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<template>
 <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="270 500 300 160" style="enable-background:new 0 0 841.9 160;" xml:space="preserve">
@@ -380,3 +380,4 @@
 		c0.3-0.1,1.6-0.1,1.9-0.1c1.8,0,3.7,0,5.5,0L350.7,549.7z"/>
 </g>
 </svg>
+</template>

@@ -1,18 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="390 560 50 100" style="enable-background:new 390 560 50 100;" xml:space="preserve">
-<style type="text/css">
-	.st0{clip-path:url(#SVGID_2_);fill:#061A38;}
-</style>
-<g>
-	<defs>
-		<rect id="SVGID_1_" x="388" y="572.2" width="67.5" height="48.4"/>
-	</defs>
-	<clipPath id="SVGID_2_">
-		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-	</clipPath>
-	<path class="st0" d="M441.7,589.6c0-1.3-1-2.4-2.4-2.4c-1.2,0-2.3,1.1-2.3,2.4c0,1.2,1.1,2.3,2.3,2.3
+<template>
+  <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+  <svg
+    version="1.1"
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="390 560 50 100"
+    style="enable-background:new 390 560 50 100;"
+    xml:space="preserve"
+  >
+    <style type="text/css">
+  .st0 {
+    clip-path: url(#SVGID_2_);
+    fill: #061a38;
+  }
+    </style>
+    <g>
+      <defs>
+        <rect id="SVGID_1_" x="388" y="572.2" width="67.5" height="48.4"></rect>
+      </defs>
+      <clipPath id="SVGID_2_">
+        <use xlink:href="#SVGID_1_" style="overflow:visible;"></use>
+      </clipPath>
+      <path
+        class="st0"
+        d="M441.7,589.6c0-1.3-1-2.4-2.4-2.4c-1.2,0-2.3,1.1-2.3,2.4c0,1.2,1.1,2.3,2.3,2.3
 		C440.6,591.9,441.7,590.9,441.7,589.6 M455.5,595.8c0,0-1.5,0-2.5-0.5c-1.8-1-1.5-3.7-1.3-7.1c0.2-4.5,1.5-8.7-0.7-11.5
 		c-1.5-1.9-4-2.1-7-2.1h-3.6c-1,0-2.3,0.1-3.5-0.8c-0.8-0.6-1.1-1.6-1.1-1.6h-1.5l-3.2,9.2c0.4,0.6,0.7,1.2,1.3,1.4
 		c2.1,0.9,2.5,0.8,5.4,0.8h1.1c3.6,0,5.3,0.1,6.3,1.6c0.7,1.1,0.5,3,0.5,4.9v5.4h-3.3c-0.3,0-3.1,0.2-4.5,0.2
@@ -26,6 +40,8 @@
 		c0-1.3-1-2.4-2.4-2.4c-1.2,0-2.3,1.1-2.3,2.4c0,1.2,1.1,2.3,2.3,2.3C421.6,614.9,422.6,613.9,422.6,612.6 M419.3,618.3
 		c0-1.3-1-2.4-2.4-2.4c-1.2,0-2.3,1.1-2.3,2.4c0,1.2,1.1,2.3,2.3,2.3C418.2,620.6,419.3,619.5,419.3,618.3 M404.1,576.3
 		c0,0-8.2-1-9.5-1.6c-1.8-0.9-2-2.4-2-2.4h-1.4l-3.1,7.9c-0.3,0.7,1,1.7,1.8,2.3c0.8,0.7,1.5,0.8,2.6,1.3c2.6,1.3-0.5,5.1-1,7.6
-		c-0.5,2.7,1.8,11,3.1,13.8h1.3l3.6-5c0,0-2.2-6.8-2.2-10.8c0-2.4,1.1-4.7,1.3-4.7c0,0,0.8,0.3,2,0.3h1.9L404.1,576.3z"/>
-</g>
-</svg>
+		c-0.5,2.7,1.8,11,3.1,13.8h1.3l3.6-5c0,0-2.2-6.8-2.2-10.8c0-2.4,1.1-4.7,1.3-4.7c0,0,0.8,0.3,2,0.3h1.9L404.1,576.3z"
+      ></path>
+    </g>
+  </svg>
+</template>
