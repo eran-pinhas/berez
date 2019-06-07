@@ -3,7 +3,7 @@
     <div id="app">
       <div class="sky">
         <div class="title-box">
-          <span class="title">בֶּרֶז</span>
+          <Title class="title"/>
           <span class="author">
             מילים: אלון אוריון
             <br>לחן: יריב לבלנג
@@ -18,42 +18,12 @@
       <img class="bird-1" src="@/assets/images/swallow1.png"  @mouseover="birdMoving = true" :class="{ moving: birdMoving}">
       <img class="bottom" src="@/assets/images/bottom.png">
 
-      <p class="text-box-1">
-        בִּקְצֵה‭ ‬הַיְשׁוּב‭, ‬בַּמִדְבָּר‭ ‬הְחָשׂוּף
-        <br>הָיָה‭ ‬בֶּרֶז‭ ‬כִּיבּוּי‭ ‬שְׁטִּיפְטֶף‭ ‬לוֹ‭ ‬טִיפְטוּף
-        <br>טִיפְּטִיפָּה‭ ‬עוֹד‭ ‬טִיפָּה‭ ‬מִסָּבִיב‭ ‬לַיְּמָמַה
-        <br>וּמֵיְמָיוְ‭ ‬הַמְתּוּקִים‭ ‬כָּךְ‭ ‬הִשְׁקּוּ‭ ‬הַשְׁמָמַה
-      </p>
-      <p class="text-box-2">
-        כְּשְׁמָצָאתִי‭ ‬אוׂתוׂ‭, ‬כְּבָר‭ ‬הָיָה‭ ‬שָׁם‭ ‬אָגַּם
-        <br>טוֹב‭, ‬בְּעֶצֵם‭ ‬שְׁלוּלִית‭, ‬חָבוּיָה‭ ‬מִכּוּלָם
-        <br>מוּקֶפֶת‭ ‬ןן‭ ‬וּכְמוּסַה‭ ‬כְּמוֹ‭ ‬סוֹד
-        <br>שָׁקְקּוּ‭ ‬הַחָיִּים‭ ‬בַּה‭, ‬קָסְמוּ‭ ‬לִי‭ ‬מֶאוׂד
-      </p>
-      <p class="text-box-3">
-        מָחְרוׂזֶת‭ ‬הוׂפִיעָה‭, ‬פְּנִינִים‭ ‬לָה‭ ‬שְׁחּוׂרוׂת
-        <br>וְסְנוּנִית‭ ‬צָלֱלַה‭ ‬לָה‭ ‬כְּשְׁבָּא‭ ‬לָה‭ ‬לִשְׁתּוֹת
-        <br>פִּשְׁפֶּשׁ‭ ‬אָרוֹךְ‭ ‬רֶגֶל‭ ‬עָל‭ ‬פְּנֶיּ‭ ‬מָיִם‭ ‬פָּסָע
-        <br>וּמִתָחַת‭ ‬רָקְדּוּ‭ ‬זָחְלִילֵּי‭ ‬יְתוּשָׁה
-      </p>
-      <p class="text-box-4">
-        אוֹר‭ ‬הַשֶׁמֶשׁ‭ ‬רִיצֶד‭ ‬פִּיזוּזִּים‭ ‬שֶׁל‭ ‬עָצְלוּת
-        <br>רֹאשָׁנִים‭ ‬אָז‭ ‬בָּקְעוּ‭ ‬וְשָׂחוּ‭ ‬בִּזְרִיזוּת
-        <br>אֶיך‭ ‬גִּידְלוּ‭ ‬הֶם‭ ‬רָגְלָיִּם‭ ‬אֶיְנֶנִי‭ ‬יוׂדֶעָ
-        <br>רָק‭ ‬אֶדָע‭ ‬שְׁהָפַך‭ ‬כֹּל‭ ‬רֹאשָׁן‭ ‬לִצְפָרְדֶעָ
-      </p>
-      <p class="text-box-5">
-        כָּךְ‭ ‬עָבַר‭ ‬כֹּל‭ ‬הַחוֹפֶשׁ‭, ‬יֶמֶיּ‭ ‬הַשָׁרָב
-        <br>עָד‭ ‬שְׁפֶּתָּע‭ ‬הוֹפּיעָ‭ ‬יוֹאָב‭ ‬הַשְׁרָבְרָב
-        <br>הוּא‭ ‬תִיקֶן‭ ‬אֶת‭ ‬הַדֶלֶף‭, ‬כֹּה‭ ‬פָּשׁוּט‭ ‬הַדָבַר
-        <br>הִתְּיָיבֶּשׁ‭ ‬הַנָוֶוה‭ ‬וְחָזָר‭ ‬הַמִדְּבָּר
-      </p>
-      <p class="text-box-6">
-        שָׁאָלְּתִי‭ "‬מָדוּעָ‭? ‬לָמַה‭ ‬כָּךְ‭ ‬לְקָלְקֶל
-        <br>אֶת‭ ‬פִּינָה‭ ‬זוֹ‭ ‬שֶׁל‭ ‬חֶמֶד‭, ‬הַיָפַה‭ ‬בַּתֶבֶל‭?" ‬
-        <br>הוּא‭ ‬עָנַה‭ ‬לִי‭ ‬בְּשֶׁקֶט‭, ‬וְהוֹסִיף‭ ‬לֶטִיפַה
-        <br>‭"‬לֹא‭ ‬אָמְרוּ‭ ‬לְךָ‭, ‬יֶלֶד‭, ‬שְׁחָבַל‭ ‬כֹּל‭ ‬טִיפָּה‭?"
-      </p>
+      <Verse1 class="svg-text-box-1" />
+      <Verse2 class="svg-text-box-2" />
+      <Verse3 class="svg-text-box-3" />
+      <Verse4 class="svg-text-box-4" />
+      <Verse5 class="svg-text-box-5" />
+      <Verse6 class="svg-text-box-6" />
 
       <div class="canes">
         <img class="leaf-1" src="@/assets/images/leaf3.png">
@@ -131,9 +101,26 @@ import Bug from "./components/Bug.vue";
 import Tadpole from "./components/Tadpole.vue";
 import VueAudio from "vue-audio";
 import Song from "./assets/berez_song.mp3";
+
+
+import Title from './assets/svg/title.svg';
+import Verse1 from './assets/svg/verse1.svg';
+import Verse2 from './assets/svg/verse2.svg';
+import Verse3 from './assets/svg/verse3.svg';
+import Verse4 from './assets/svg/verse4.svg';
+import Verse5 from './assets/svg/verse5.svg';
+import Verse6 from './assets/svg/verse6.svg';
+
 export default {
   name: "app",
   components: {
+    Title,
+    Verse1,
+    Verse2,
+    Verse3,
+    Verse4,
+    Verse5,
+    Verse6,
     Bug,
     VueAudio,
     Tadpole
@@ -281,15 +268,14 @@ $b-y-offset: 15%;
     .title-box {
       direction: rtl;
       display: flex;
+      justify-content: space-between;
       flex-direction: left;
       position: absolute;
       width: 100%;
       padding: 3em;
       box-sizing: border-box;
       .title {
-        width: 70%;
-        text-align: right;
-        font-size: 5em;
+        width: 21%;
       }
       .author {
         width: 30%;
@@ -300,18 +286,16 @@ $b-y-offset: 15%;
   }
 
   @for $i from 1 through 10 {
-    .text-box-#{$i} {
+    .svg-text-box-#{$i} {
       position: absolute;
-      right: 15%;
-      width: 50%;
+
+      right: 11%;
+      width: 36%;
       z-index: 100;
-      direction: rtl;
-      text-align: right;
-      font-size: 2em;
-      top: 5% + $i * 10%;
+      top: 4.5% + $i * 10%;
 
       @media only screen and (max-width: 600px) {
-        font-size: 3em;
+        width: 150%;
       }
     }
   }
