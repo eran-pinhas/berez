@@ -1,15 +1,15 @@
 module.exports = {
-  chainWebpack: (config) => {
-
+  chainWebpack: config => {
     // const svgRule = config.module.rule('svg');
- 
+
     // console.log(svgRule.uses);
     // svgRule.uses.clear();
- 
+
     // svgRule
     //   .use('vue-svg-loader')
     //   .loader('vue-svg-loader');
 
-    return config.resolve.extensions.prepend(".mp3")
-  }
+    return config.resolve.extensions.prepend(".mp3");
+  },
+  publicPath: "./"
 };
